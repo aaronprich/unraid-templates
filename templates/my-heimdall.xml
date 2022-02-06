@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>heimdall</Name>
+  <Repository>lscr.io/linuxserver/heimdall:development</Repository>
+  <Registry>https://github.com/orgs/linuxserver/packages/container/package/heimdall</Registry>
+  <Network>apr</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/linuxserver/docker-heimdall/issues/new/choose</Support>
+  <Project>https://heimdall.site</Project>
+  <Overview>Heimdall(https://heimdall.site) is a way to organise all those links to your most used web sites and web applications in a simple way.
+Simplicity is the key to Heimdall.
+Why not use it as your browser start page? It even has the ability to include a search bar using either Google, Bing or DuckDuckGo.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:88]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/templates/main/unraid/heimdall.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/heimdall-logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1642447397</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Heimdall(https://heimdall.site) is a way to organise all those links to your most used web sites and web applications in a simple way.&#xD;
+Simplicity is the key to Heimdall.&#xD;
+Why not use it as your browser start page? It even has the ability to include a search bar using either Google, Bing or DuckDuckGo.</Description>
+  <Networking>
+    <Mode>apr</Mode>
+    <Publish>
+      <Port>
+        <HostPort>88</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>444</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/heimdall</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>022</Value>
+      <Name>UMASK</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="WebUI" Target="80" Default="80" Mode="tcp" Description="http gui" Type="Port" Display="always" Required="true" Mask="false">88</Config>
+  <Config Name="Port: 443" Target="443" Default="443" Mode="tcp" Description="https gui" Type="Port" Display="always" Required="true" Mask="false">444</Config>
+  <Config Name="Appdata" Target="/config" Default="" Mode="rw" Description="Contains all relevant configuration files." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/heimdall</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="{3}" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="022" Mode="{3}" Description="Container Variable: UMASK" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
+</Container>

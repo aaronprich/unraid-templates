@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>prowlarr</Name>
+  <Repository>cr.hotio.dev/hotio/prowlarr:testing</Repository>
+  <Registry>https://hub.docker.com/r/hotio/prowlarr</Registry>
+  <Network>apr</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hotio.dev/discord</Support>
+  <Project>https://hotio.dev/containers/prowlarr</Project>
+  <Overview>Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps.</Overview>
+  <Category>Downloaders: MediaApp:Other</Category>
+  <WebUI>http://[IP]:[PORT:9696]</WebUI>
+  <TemplateURL/>
+  <Icon>https://hotio.dev/webhook-avatars/prowlarr.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1644149368</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps.</Description>
+  <Networking>
+    <Mode>apr</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9696</HostPort>
+        <ContainerPort>9696</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/prowlarr</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/prowlarr/98-themepark</HostDir>
+      <ContainerDir>/etc/cont-init.d/99-themepark</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>America/Chicago</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>TP_HOTIO</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>dracula</Value>
+      <Name>TP_THEME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>002</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port for 9696" Target="9696" Default="9696" Mode="tcp" Description="Container Port: 9696" Type="Port" Display="always-hide" Required="true" Mask="false">9696</Config>
+  <Config Name="Host Path for /config" Target="/config" Default="/mnt/user/appdata/prowlarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/prowlarr</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always-hide" Required="false" Mask="false">America/Chicago</Config>
+  <Config Name="TP_HOTIO" Target="TP_HOTIO" Default="" Mode="" Description="Container Variable: TP_HOTIO" Type="Variable" Display="advanced-hide" Required="false" Mask="false">true</Config>
+  <Config Name="TP_THEME" Target="TP_THEME" Default="" Mode="" Description="Container Variable: TP_THEME" Type="Variable" Display="always" Required="false" Mask="false">dracula</Config>
+  <Config Name="themepark" Target="/etc/cont-init.d/99-themepark" Default="" Mode="rw" Description="Container Path: /etc/cont-init.d/99-themepark" Type="Path" Display="always-hide" Required="false" Mask="false">/mnt/user/appdata/prowlarr/98-themepark</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="002" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="advanced-hide" Required="false" Mask="false">002</Config>
+</Container>

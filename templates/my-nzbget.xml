@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>nzbget</Name>
+  <Repository>cr.hotio.dev/hotio/nzbget</Repository>
+  <Registry>https://hub.docker.com/r/hotio/nzbget</Registry>
+  <Network>apr</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hotio.dev/discord</Support>
+  <Project>https://hotio.dev/containers/nzbget</Project>
+  <Overview>The most efficient usenet downloader.</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:6789]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/ich777/docker-templates/master/ich777/images/nzbget.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1644149449</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>The most efficient usenet downloader.</Description>
+  <Networking>
+    <Mode>apr</Mode>
+    <Publish>
+      <Port>
+        <HostPort>6789</HostPort>
+        <ContainerPort>6789</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>6789</HostPort>
+        <ContainerPort>6789</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nzbget</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/data/usenet/</HostDir>
+      <ContainerDir>/data/usenet/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nzbget/98-themepark</HostDir>
+      <ContainerDir>/etc/cont-init.d/99-themepark</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>America/Chicago</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>TP_HOTIO</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>002</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Path for /config" Target="/config" Default="/mnt/user/appdata/nzbget" Mode="rw" Description="Container Path: /config" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/nzbget</Config>
+  <Config Name="Host Path 2" Target="/data/usenet/" Default="" Mode="rw" Description="Container Path: /data/usenet/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/usenet/</Config>
+  <Config Name="Themepark" Target="/etc/cont-init.d/99-themepark" Default="" Mode="rw" Description="Container Path: /etc/cont-init.d/99-themepark" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nzbget/98-themepark</Config>
+  <Config Name="Host Port 1" Target="6789" Default="" Mode="udp" Description="Container Port: 6789" Type="Port" Display="always" Required="false" Mask="false">6789</Config>
+  <Config Name="Host Port 2" Target="6789" Default="" Mode="tcp" Description="Container Port: 6789" Type="Port" Display="always" Required="false" Mask="false">6789</Config>
+  <Config Name="Host Key 1" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always-hide" Required="false" Mask="false">America/Chicago</Config>
+  <Config Name="Host Key 2" Target="TP_HOTIO" Default="" Mode="" Description="Container Variable: TP_HOTIO" Type="Variable" Display="always-hide" Required="false" Mask="false">true</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="002" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="advanced-hide" Required="false" Mask="false">002</Config>
+</Container>

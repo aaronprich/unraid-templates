@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>tautulli</Name>
+  <Repository>hotio/tautulli</Repository>
+  <Registry>https://hub.docker.com/r/hotio/tautulli</Registry>
+  <Network>apr</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hotio.dev/discord</Support>
+  <Project>https://hotio.dev/containers/tautulli</Project>
+  <Overview>A Python based monitoring and tracking tool for Plex Media Server.</Overview>
+  <Category>Downloaders: MediaApp:Video</Category>
+  <WebUI>http://[IP]:[PORT:8181]</WebUI>
+  <TemplateURL/>
+  <Icon>https://hotio.dev/webhook-avatars/tautulli.png</Icon>
+  <ExtraParams>--hostname tat</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1642446916</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>A Python based monitoring and tracking tool for Plex Media Server.</Description>
+  <Networking>
+    <Mode>apr</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8181</HostPort>
+        <ContainerPort>8181</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/tautulli</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Plex-Media-Server/Library/Application Support/Plex Media Server/Logs/</HostDir>
+      <ContainerDir>/plex-logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>America/Chicago</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>002</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port for 8181" Target="8181" Default="8181" Mode="tcp" Description="Container Port: 8181" Type="Port" Display="always-hide" Required="true" Mask="false">8181</Config>
+  <Config Name="Host Path for /config" Target="/config" Default="/mnt/user/appdata/tautulli" Mode="rw" Description="Container Path: /config" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/tautulli</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">America/Chicago</Config>
+  <Config Name="Plex Logs" Target="/plex-logs" Default="" Mode="rw" Description="Container Path: /plex-logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Plex-Media-Server/Library/Application Support/Plex Media Server/Logs/</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="002" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="advanced-hide" Required="false" Mask="false">002</Config>
+</Container>

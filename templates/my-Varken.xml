@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Varken</Name>
+  <Repository>boerderij/varken</Repository>
+  <Registry>https://hub.docker.com/r/boerderij/varken/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Boerderij/Varken</Support>
+  <Project>https://github.com/Boerderij/Varken</Project>
+  <Overview>Varken requires influxdb and grafana.  Deploy those containers first.&#xD;
+&#xD;
+Dutch for PIG. PIG is an Acronym for Plex/InfluxDB/Grafana&#xD;
+&#xD;
+Varken is a standalone command-line utility to aggregate data from the Plex ecosystem into InfluxDB. Examples use Grafana for a frontend&#xD;
+&#xD;
+&#xD;
+You must edit the varken.ini file in /mnt/user/appdata/varken. &#xD;
+&#xD;
+ </Overview>
+  <Category>Tools: Network:Management</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/benderstwin/docker-templates/master/Bender-Varken.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/benderstwin/docker-templates/master/images/varken.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1642446851</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Varken requires influxdb and grafana.  Deploy those containers first.&#xD;
+&#xD;
+Dutch for PIG. PIG is an Acronym for Plex/InfluxDB/Grafana&#xD;
+&#xD;
+Varken is a standalone command-line utility to aggregate data from the Plex ecosystem into InfluxDB. Examples use Grafana for a frontend&#xD;
+&#xD;
+&#xD;
+You must edit the varken.ini file in /mnt/user/appdata/varken. &#xD;
+&#xD;
+ </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Varken</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>America/Chicago</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Timezone" Target="TZ" Default="America/Denver" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">America/Chicago</Config>
+  <Config Name="config" Target="/config" Default="/mnt/user/appdata/varken" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Varken</Config>
+</Container>

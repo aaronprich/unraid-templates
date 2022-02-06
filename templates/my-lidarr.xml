@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>lidarr</Name>
+  <Repository>cr.hotio.dev/hotio/lidarr:nightly</Repository>
+  <Registry>https://hub.docker.com/r/hotio/lidarr</Registry>
+  <Network>apr</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hotio.dev/discord</Support>
+  <Project>https://hotio.dev/containers/lidarr</Project>
+  <Overview>Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them.</Overview>
+  <Category>Downloaders: MediaApp:Music</Category>
+  <WebUI>http://[IP]:[PORT:8686]</WebUI>
+  <TemplateURL/>
+  <Icon>https://hotio.dev/webhook-avatars/lidarr.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1644149024</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them.</Description>
+  <Networking>
+    <Mode>apr</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8686</HostPort>
+        <ContainerPort>8686</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/lidarr</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/data/</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/lidarr/98-themepark</HostDir>
+      <ContainerDir>/etc/cont-init.d/99-themepark</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>America/Chicago</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>overseerr</Value>
+      <Name>TP_THEME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>TP_HOTIO</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>002</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port for 8686" Target="8686" Default="8686" Mode="tcp" Description="Container Port: 8686" Type="Port" Display="always-hide" Required="true" Mask="false">8686</Config>
+  <Config Name="Host Path for /config" Target="/config" Default="/mnt/user/appdata/lidarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/lidarr</Config>
+  <Config Name="data" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/data/</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced-hide" Required="false" Mask="false">America/Chicago</Config>
+  <Config Name="TP_THEME" Target="TP_THEME" Default="" Mode="" Description="Container Variable: TP_THEME" Type="Variable" Display="always-hide" Required="false" Mask="false">overseerr</Config>
+  <Config Name="TP_HOTIO" Target="TP_HOTIO" Default="" Mode="" Description="Container Variable: TP_HOTIO" Type="Variable" Display="advanced-hide" Required="false" Mask="false">true</Config>
+  <Config Name="themepark" Target="/etc/cont-init.d/99-themepark" Default="" Mode="rw" Description="Container Path: /etc/cont-init.d/99-themepark" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/lidarr/98-themepark</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="002" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="advanced-hide" Required="false" Mask="false">002</Config>
+</Container>
